@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Cadrastro</title>
+</head>
+<body>
+    <section class="formulario">
+        <form method="post" class="area">
+            <div class="imagen">
+                <img src="logo.png">
+            </div>
+            
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" required><br>
+            
+            <input type="password" name="senha" id="senha" placeholder="Sua senha" required><br>
+            
+            <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
+        <!-- Input Radio -->
+        <p>Sexo:</p>
+        <div class="radio">
+            <label for="feminino">Feminino:</label>
+            <input type="radio" name="genero" id="feminino" ><br>
+            <label for="marculino">Masculino:</label>
+            <input type="radio" name="genero" id="marculino"><br>
+            <label for="outro">Outros:</label>
+            <input type="radio" name="genero" id="outro">
+        </div><br>
+        <!-- Input Checkbox -->
+         <div>
+            <label for="aceito">Aceito os termos:</label>
+            <input type="checkbox" id="aceito">
+         </div>
+         <br>
+            <input type="button" value="criar" onclick="criar()">
+        </form>    
+    </section>
+    <script src="cadastro.js"></script>
+</body>
+</html>
