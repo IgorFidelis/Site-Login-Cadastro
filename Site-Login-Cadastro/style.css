@@ -69,3 +69,9 @@ a{
     margin-left: 10px;
 
 }
+
+span{
+    color: #cbd0f7;
+    margin-top: 5px;
+    display: none;
+}
