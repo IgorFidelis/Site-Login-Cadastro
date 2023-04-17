@@ -1,6 +1,10 @@
+const nome = document.querySelector('.nome');
+const senha = document.querySelector('.senha');
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', entrar);
+
 function entrar(){
-    let nome = document.querySelector('.nome')
-    let senha = document.querySelector('.senha')
     if (nome.value.length == 0 && senha.value.length == 0){
         window.alert('[ERRO] Preencha os dados!')
     } else {
