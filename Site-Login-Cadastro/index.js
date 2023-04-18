@@ -4,8 +4,8 @@ const btn = document.querySelector('.btn');
 
 
 
-const entrar = ()=> {
-
+const entrar = (e)=> {
+    console.log(e);
     if(!nome.value){
         let span = document.querySelector('.nome + span')
         span.style.display = 'inline';
