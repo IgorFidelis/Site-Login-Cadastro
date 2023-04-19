@@ -1,10 +1,58 @@
-let nome = document.getElementById('nome')
-let senha = document.getElementById('senha')
-let email = document.getElementById('email')
+const nome = document.getElementById('nome')
+const senha = document.getElementById('senha')
+const email = document.getElementById('email')
+const sexo = document.getElementsByName('genero')
+const termos = document.getElementById('aceito')  
+const btn = document.querySelector('.btn');
+const dadosIs = document.querySelectorAll('.dados');
+const sexoIs = document.querySelectorAll('.sexo');
+const termoIs = document.querySelector('.termo');
 
-let sexo = document.getElementsByName('genero')
 
-let termos = document.getElementById('aceito')  
+// console.log(sexoIs);
+// console.log(termoIs);
+
+
+
+const validar = (dados)=>{
+    if(dados.className == 'sexo'){
+        if(!dados.checked ){
+            
+            return
+        }
+        return
+    }
+
+    if(dados.target.className == 'dados'){
+        if(!dados.target.value){
+            alert(`[ERRO] falta dados no: ${dados.target.name}`)
+            
+        }
+        console.log('sim');
+        return
+    };
+
+    console.log(dados.className);
+    // if(dados.target === 'sexo'){
+    //     console.log(dados);
+    // }
+    // console.log('outro dados');
+    // console.log('continuou');
+}
+
+sexoIs.forEach(sexos =>{
+    if(!sexos.checked){
+        alert(`[ERRO] confirmar o sexo.`)
+        return
+    }
+})
+
+
+dadosIs.forEach(dados =>{
+    dados.addEventListener('blur', validar);
+})
+
+btn.addEventListener("click", criar)
 
 function criar(){
     let valido1 = false
@@ -13,7 +61,7 @@ function criar(){
     let genero = ''
     let aceita = false
     if(nome.value.length == 0 || senha.value.length == 0 || email.value.length == 0){
-        window.alert('[ERRO] Falta dados!')
+        window.alert('[ERRO] Falta dados!');
     } else {
         valido1 = true
     }
