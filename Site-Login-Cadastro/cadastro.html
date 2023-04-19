@@ -14,28 +14,29 @@
                 <img src="logo.png">
             </div>
             
-            <input type="text" name="nome" id="nome" placeholder="Seu nome" required><br>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" required class="dados"><br>
             
-            <input type="password" name="senha" id="senha" placeholder="Sua senha" required><br>
+            <input type="password" name="senha" id="senha" placeholder="Sua senha" required class="dados"><br>
             
-            <input type="email" name="email" id="email" placeholder="Seu e-mail" required>
+            <input type="email" name="email" id="email" placeholder="Seu e-mail" required class="dados">
         <!-- Input Radio -->
         <p>Sexo:</p>
+
         <div class="radio">
             <label for="feminino">Feminino:</label>
-            <input type="radio" name="genero" id="feminino" ><br>
+            <input type="radio" name="genero" id="feminino" class="sexo" ><br>
             <label for="marculino">Masculino:</label>
-            <input type="radio" name="genero" id="marculino"><br>
+            <input type="radio" name="genero" id="marculino" class="sexo"><br>
             <label for="outro">Outros:</label>
-            <input type="radio" name="genero" id="outro">
+            <input type="radio" name="genero" id="outro" class="sexo" checked>
         </div><br>
         <!-- Input Checkbox -->
          <div>
             <label for="aceito">Aceito os termos:</label>
-            <input type="checkbox" id="aceito">
+            <input type="checkbox" id="aceito" class="termo">
          </div>
          <br>
-            <input type="button" value="criar" onclick="criar()">
+            <button type="button" class="btn">criar</button>
         </form>    
     </section>
     <script src="cadastro.js"></script>
