@@ -4,35 +4,25 @@ const btn = document.querySelector('.btn');
 const inputsIS = document.querySelectorAll('input');
 
 const validar = (a)=>{
-    console.log(a);
+    if(!a.value){
+        let span = document.querySelector(`.${a.className} + span`)
+        span.style.display = 'inline';
+        setInterval(() => {
+            span.style.display = 'none';
+        }, 5000);
+    }
 }
 
 
 
-const entrar = (e)=> {
-
-    inputsIS.forEach(input => {
-        validar(input);
-    });
-    console.log(e);
-    if(!nome.value){
-        let span = document.querySelector('.nome + span')
-        span.style.display = 'inline';
-        setInterval(() => {
-            span.style.display = 'none';
-        }, 5000);
+const entrar = ()=> {
+    
+    if(!nome.value || !senha.value){
+        inputsIS.forEach(inputs => validar(inputs))
         return
     }
-
-    if(!senha.value){
-        let span = document.querySelector('.senha + span')
-        span.style.display = 'inline';
-        setInterval(() => {
-            span.style.display = 'none';
-        }, 5000);
-        return
-    }
-
+    
+    alert('Login feito!')
   
 }
 
