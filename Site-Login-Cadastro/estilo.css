@@ -90,3 +90,7 @@ p{
     border-radius: 8px;
     color: #cbd0f7;
 }
+
+span{
+    display: none;
+}
