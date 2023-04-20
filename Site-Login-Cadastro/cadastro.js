@@ -1,66 +1,67 @@
-const nome = document.getElementById('nome')
-const senha = document.getElementById('senha')
-const email = document.getElementById('email')
-const termos = document.getElementById('aceito')  
+const nome = document.getElementById('nome');
+const senha = document.getElementById('senha');
+const email = document.getElementById('email');
 const btn = document.querySelector('.btn');
 const dadosIs = document.querySelectorAll('.dados');
 const termoIs = document.querySelector('.termo');
 
-
-const validar = (dados)=>{
-    console.log(dados);
-    if(dados.target.className === 'btn'){
-        console.log('btn');
+const ValidarTermoIs = ()=>{
+    if(!termoIs.checked){
+        let spanTemosIS = document.querySelector(`.termos  span`);
+        spanTemosIS.style.display = 'block'
+        setInterval(() => {
+            spanTemosIS.style.display = "none"
+        }, 3000); 
         return true
     }
-
-    if(!dados.target.value){
-        alert(`[ERRO] falta dados no: ${dados.target.name}`)
-    }
-    return
-    
 }
 
-
-
-dadosIs.forEach(dados =>{
-    dados.addEventListener('blur', validar);
-})
-
-btn.addEventListener("click", criar)
-
-function criar(e){
-    console.log(e);
-
-   if(!validar(e)){
-       return
-    }
-    
-    console.log('chegou');
-
-
-    let sexo1 = document.querySelector('.sexo:checked');
-    if(!sexo1){
+const ValidarSexoIs = ()=>{
+   let sexo = document.querySelector('.sexo:checked')
+   if(!sexo){
         let spanGeneroIS = document.querySelector(`.radio  span`);
-        console.log(spanGeneroIS);
         spanGeneroIS.style.display = 'block'
         setInterval(() => {
             spanGeneroIS.style.display = "none"
         }, 3000);
-        return
-    }
+        return true
+   }
+}
 
-    if(!termoIs.checked){
-        let spanTemosIS = document.querySelector(`.termos  span`);
-        console.log(spanTemosIS);
-        spanTemosIS.style.display = 'block'
+const ValidarDadosIs = ()=>{
+    if(!nome.value||!senha.value||!email.value){
+        const spanISS = document.querySelector('.area > span');
+        spanISS.style.display = 'inline';
         setInterval(() => {
-            spanTemosIS.style.display = "none"
+            spanISS.style.display = 'none';
         }, 3000);
+        return true
+    }
+}
+
+const criarContaIs = ()=>{
+     if(ValidarTermoIs()||ValidarSexoIs()||ValidarDadosIs()){
         return
     }
 
-
-        alert('Conta Criada!')
+    alert("conta criada!!")
     
 }
+
+const validarBlur = (dados)=>{ 
+    if(!dados.target.value){
+            const spanISS = document.querySelector('.area > span');
+            spanISS.style.display = 'inline';
+            setInterval(() => {
+                spanISS.style.display = 'none';
+            }, 6000);
+    }
+    return
+    
+}
+dadosIs.forEach(dados =>{
+    dados.addEventListener('blur', validarBlur);
+})
+
+btn.addEventListener("click", criarContaIs)
+
