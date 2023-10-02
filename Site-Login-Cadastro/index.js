@@ -7,9 +7,11 @@ const validar = (a)=>{
     if(!a.value){
         let span = document.querySelector(`.${a.className} + span`)
         span.style.display = 'inline';
-        setInterval(() => {
+        let time = setTimeout(() => {
             span.style.display = 'none';
-        }, 5000);
+        }, 2000);
+
+        
     }
 }
 
